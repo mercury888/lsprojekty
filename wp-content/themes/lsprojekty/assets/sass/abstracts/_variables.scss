@@ -1,0 +1,194 @@
+// -----------------------------------------------------------------------------
+// Theme variables.
+// -----------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+// Regular ( Nunito ) font family
+$font-base: 'Roboto', sans-serif !default;
+
+// Header (Nunito) font family
+$font-header: 'Montserrat', sans-serif !default;
+
+//body contect text size
+$font-size-base: 18px !default;
+$font-size-small: $font-size-base - 2 !default;
+$font-size-large: $font-size-base + 2 !default;
+$colors: (
+	'brand-primary-light': #657395,
+	'brand-primary': #081228,
+	'brand-primary-dark': #354464,
+
+	'brand-secondary-light': #FFED71,
+	'brand-secondary': #FFE31D,
+	'brand-secondary-dark': #9A8100,
+
+	'gray': #34343e,
+	'dark-gray': #F9F9F9,
+	'white': #fff,
+	'black': #000,
+	'error': #f00,
+	'warning': #ffae42,
+	'success': #008000,
+);
+
+
+$colormap: ();
+@each $name, $color in $colors {
+	$generated: (
+		'base': $color,
+	);
+	$colormap: map-merge($colormap, ($name: $generated));
+}
+@function color($color, $type: 'base') {
+	@if map-has-key($colormap, $color) && map-has-key(map-get($colormap, $color), $type) {
+		$result: map-get(map-get($colormap, $color), $type);
+	}
+	@return $result;
+}
+//
+
+// sticky sidebar positioning
+$desktopPosition: 200px;
+$1024Position: 160px;
+$992Position: 150px;
+
+/** General appointment btn */
+$appbtnBG: color('brand-primary');
+$appbtnBorder: color('brand-primary');
+$appbtnText: color('white');
+$appbtnBGHover: color('brand-secondary');
+$appbtnBorderHover: color('brand-secondary');
+$appbtnTextHover: color('white');
+
+// breadcrumb variables
+$breadCrumbBG: color('brand-secondary');
+$breadCrumbText: color('white');
+$breadCrumbHover: color('brand-primary');
+
+// Heading font size
+$font-size-h1: 55px !default;
+$font-size-h2: 40px !default;
+$font-size-h3: 28px !default;
+$font-size-h4: 25px !default;
+$font-size-h5: 18px !default;
+$font-size-h6: 17px !default;
+
+// Heading Typo
+$headings-font-family: $font-header !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.4 !default;
+
+/** theme border customization */
+$border-radius: 0;
+$border-size: 2px;
+$border-style: solid;
+$border-color: color('brand-primary');
+
+/** header quick links buttons variable */
+$headerButtonPadding : 10px 20px;
+$headerButtonRadius: $border-radius;
+$headerButtonFont: $font-header;
+
+// Forms - default form styling
+$label-color: color('black');
+$label-font-weight: 400;
+$label-font-family: $font-base;
+$label-font-size: $font-size-small;
+$input-bg: color('white');
+$input-height: 44px;
+$input-color: color('black');
+$input-color-placeholder: color('brand-secondary');
+$input-font-size: $font-size-base;
+$input-font-family: $font-base;
+$input-font-weight: 400;
+$input-radius: $border-radius;
+$input-border-style: $border-style;
+$input-border-size: $border-size;
+$input-border-color: color('black');
+$input-border-color-focus: color('brand-primary');
+$textarea-height-base: 170px;
+$button-bg: color('black');
+$button-color: color('white');
+$button-hover-bg: color('brand-primary');
+$button-hover-color: color('white');
+$button-font-size: 16px;
+$button-font-weight: 700;
+$button-font-case: uppercase;
+$button-height: 44px;
+$button-border-size: $border-size;
+$button-border-style: $border-style;
+$button-border-color: color('black');
+$button-border-color-focus: color('brand-primary');
+$button-radius: $border-radius;
+
+/** Ninja Form with brand primary styles */
+/** allocated with parent class .ninja-field--primary */
+$ninjaFieldBorderColorPrimary: color('brand-primary');
+$ninjaFieldBGColorPrimary: color('white');
+$ninjaFieldTextColorPrimary: color('brand-primary');
+$ninjaButtonBGColorPrimary: color('brand-primary');
+$ninjaButtonTextColorPrimary: color('white');
+
+/** Ninja Form with brand secondary styles */
+/** allocated with parent class .ninja-field--secondary */
+$ninjaFieldBorderColorSecondary: color('brand-secondary');
+$ninjaFieldBGColorSecondary: color('white');
+$ninjaFieldTextColorSecondary: color('brand-secondary');
+$ninjaButtonBGColorSecondary: color('brand-secondary');
+$ninjaButtonTextColorSecondary: color('white');
+
+ //Container's maximum width
+$wrapper-width: 1282px !default;
+$container-width: rem(1282px) !default;
+
+
+//text-transform property
+$texttransform: (
+	"uppercase",
+	"capitalize",
+	"lowercase",
+	"none"
+);
+
+// spacing : padding and margin
+$spaceamounts: (
+	0,
+	5,
+	10,
+	15,
+	20,
+	25,
+	30,
+	35,
+	40,
+	45,
+	50,
+);
+
+// text alignment
+$textalign: (
+	"left",
+	"right",
+	"center",
+	"justify"
+);
+
+// media query breakpoints.
+$breakpoints: (
+	'1600': 1600px,
+	'1200': 1200px,
+	'1024': 1024px,
+	'992': 992px,
+	'767': 767px,
+	'640': 640px,
+	'568': 568px,
+	'480': 480px,
+);
+
+
+/** social buttons in footer */
+$footerSocialBG: color('brand-primary-dark');
+$footerSocialColor: color('white');
+$footerSocialBGHover: color('brand-primary-dark');
+$footerSocialColorHover: color('black');

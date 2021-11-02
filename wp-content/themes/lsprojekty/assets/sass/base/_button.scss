@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+
+body.logged-in header {
+	top: 32px;
+}
+
+.btn-center {
+	text-align: center;
+}
+
+.read-more {
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 0;
+	padding: 17px 20px;
+	text-transform: uppercase;
+	border-radius: $border-radius;
+	border-width: $border-size;
+	border-style: $border-style;
+	border-color: color('brand-secondary');
+	font-size: 16px;
+	font-weight: 800;
+	background: color('brand-secondary');
+	color: color('brand-primary');
+	-webkit-transition: 0.5s ease all;
+	-o-transition: 0.5s ease all;
+	transition: 0.5s ease all;
+	display: inline-flex;
+	flex-wrap: wrap;
+
+	@include breakpoint(767px) {
+		padding: 12px 17px;
+	}
+	svg {
+		margin-left: 7px;
+	}
+	&:hover {
+		svg, path {
+			fill: color('white');
+			stroke: color('white');
+		}
+	}
+
+	&:hover,
+	&.primary,
+	&.hover-primary:hover {
+		border-color: color('brand-primary');
+		background: color('brand-primary');
+		color: color('white');
+	}
+
+	&.secondary,
+	&.hover-secondary:hover {
+		border-color: color('brand-secondary');
+		background: color('brand-secondary');
+		color: color('brand-primary');
+	}
+
+	&.white,
+	&.hover-white:hover {
+		border-color: color('white');
+		background: color('white');
+		color: color('brand-primary');
+	}
+
+	@media (min-width: 1200px) {
+		&.btn-lg {
+			padding: 14px 26px;
+			font-size: 110%;
+		}
+		&.btn-xl {
+			padding: 16px 30px;
+			font-size: 120%;
+		}
+	}
+}
+
+.link-btn{
+		color: color('brand-primary');
+		font-size: 16px;
+		text-transform: uppercase;
+		padding-bottom: 10px;
+		border-bottom: 1px solid color('brand-primary');
+		font-weight: 700;
+		-webkit-transition: 0.5s ease all;
+		-o-transition: 0.5s ease all;
+		transition: 0.5s ease all;
+		letter-spacing: 1px;
+
+		&:hover {
+			color: color('brand-secondary');
+			border-color: color('brand-secondary');
+		}
+
+		&.secondary,
+		&.hover-secondary:hover {
+			border-color: color('brand-secondary');
+			color: color('brand-secondary');
+		}
+
+		&.white,
+		&.hover-white:hover {
+			color: color('white');
+			border-color: color('white');
+		}
+}

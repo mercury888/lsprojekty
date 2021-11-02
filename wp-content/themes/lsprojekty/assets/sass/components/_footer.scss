@@ -1,0 +1,33 @@
+footer.bg-color {
+  background-color: color('dark-gray');
+}
+footer {
+	padding: 37px 0;
+
+  .white-logo {
+    display: none;
+  }
+}
+.footer-menu {
+	h4 {
+		display: none;
+	}
+	ul {
+		margin-bottom: 0;
+		li {
+			display: inline-block;
+			padding: 0 20px;
+			text-transform: uppercase;
+
+			a {
+				color: color('brand-primary-light');
+				font-family: $font-header;
+				font-size: 12px;
+
+				&:hover {
+					color: color('brand-secondary');
+				}
+			}
+		}
+	}
+}
